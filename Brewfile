@@ -1,0 +1,7 @@
+brew "chezmoi"
+brew "cask"
+brew "tmux"
+brew "tree"
+brew "wget"
+brew "asdf"
+cask "alacritty"
