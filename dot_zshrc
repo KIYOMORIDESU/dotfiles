@@ -34,11 +34,40 @@ if [ -f '~/Downloads/google-cloud-sdk 2/completion.zsh.inc' ]; then . '~/Downloa
 
 
 # =================================================
+#                    functions
+# =================================================
+
+# git checkout
+gcb() {
+  local branches branch
+  branches=$(git --no-pager branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
+# kill process
+pskill() {
+  local pid
+  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+
+  if [ "x$pid" != "x" ]
+  then
+    echo $pid | xargs kill -${1:-9}
+  fi
+}
+
+# repeat history
+his() {
+  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+}
+
+# =================================================
 #                      alias
 # =================================================
 
 alias ls='ls -G'
 alias ghf='cd `ghq list -p | fzf`'
+
 
 # =================================================
 #                     manager
