@@ -1,22 +1,23 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # =================================================
 #                     prompt
 # =================================================
 
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(starship init zsh)"
 
 # =================================================
-#                      var
+#                      env 
 # =================================================
 
 export EDITOR=nvim
+export HISTSIZE=1000
+export SAVEHIST=100000
+
+# =================================================
+#                     option
+# =================================================
+
+setopt hist_ignore_dups
+setopt EXTENDED_HISTORY
 
 # =================================================
 #                      PATH
@@ -24,14 +25,6 @@ export EDITOR=nvim
 
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
-
-# Google Cloud 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '~/Downloads/google-cloud-sdk 2/path.zsh.inc' ]; then . '~/Downloads/google-cloud-sdk 2/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '~/Downloads/google-cloud-sdk 2/completion.zsh.inc' ]; then . '~/Downloads/google-cloud-sdk 2/completion.zsh.inc'; fi
-
 
 # =================================================
 #                    functions
@@ -58,7 +51,7 @@ pskill() {
 
 # repeat history
 his() {
-  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
 }
 
 # =================================================
