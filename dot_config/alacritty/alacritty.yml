@@ -1,5 +1,9 @@
 shell:
   program: /bin/zsh
+  args:
+   - -l
+   - -c
+   - 'tmux a -t default || tmux new -s default\; source ~/.config/tmux/default.session.conf'
 
 font:
   size: 14.0
@@ -13,7 +17,8 @@ font:
     family: HackGen35 Console NF
     style: Regular Italic
 
-background_opacity: 0.90
+window:
+  opacity: 0.90
 
 colors:
   # Default colors
