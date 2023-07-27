@@ -65,4 +65,8 @@ alias ghf='cd `ghq list -p | fzf`'
 # sheldon
 eval "$(sheldon source)"
 
+# =================================================
+#                   custom zshrc
+# =================================================
+
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
