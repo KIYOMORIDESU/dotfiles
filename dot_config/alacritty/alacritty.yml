@@ -19,6 +19,9 @@ font:
 
 window:
   opacity: 0.90
+  padding:
+    x: 4
+    y: 4 
 
 colors:
   # Default colors
