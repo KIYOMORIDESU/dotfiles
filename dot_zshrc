@@ -5,7 +5,7 @@
 eval "$(starship init zsh)"
 
 # =================================================
-#                      env 
+#                      env
 # =================================================
 
 export EDITOR=nvim
@@ -26,19 +26,19 @@ setopt EXTENDED_HISTORY
 # git checkout
 gcb() {
   local branches branch
-  branches=$(git --no-pager branch -vv) &&
-  branch=$(echo "$branches" | fzf +m) &&
-  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+    branches=$(git --no-pager branch -vv) &&
+    branch=$(echo "$branches" | fzf +m) &&
+    git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
 # kill process
 pskill() {
   local pid
-  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+    pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
-  if [ "x$pid" != "x" ]
-  then
-    echo $pid | xargs kill -${1:-9}
+    if [ "x$pid" != "x" ]
+      then
+        echo $pid | xargs kill -${1:-9}
   fi
 }
 
@@ -59,8 +59,8 @@ alias ghf='cd `ghq list -p | fzf`'
 #                     manager
 # =================================================
 
-# asdf 
-. $(brew --prefix asdf)/asdf/libexec/asdf.sh
+# asdf
+. $(brew --prefix asdf)/libexec/asdf.sh
 
 # sheldon
 eval "$(sheldon source)"
