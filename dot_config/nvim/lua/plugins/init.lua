@@ -320,7 +320,6 @@ local plugins = {
 
   {
     "xiyaowong/nvim-transparent",
-    event = "VeryLazy",
     config = function()
       require("plugins.nvim-transparent")
     end
