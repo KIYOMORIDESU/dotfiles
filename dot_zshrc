@@ -60,7 +60,7 @@ alias ghf='cd `ghq list -p | fzf`'
 # =================================================
 
 # asdf 
-. /usr/local/opt/asdf/libexec/asdf.sh
+. $(brew --prefix asdf)/asdf/libexec/asdf.sh
 
 # sheldon
 eval "$(sheldon source)"
