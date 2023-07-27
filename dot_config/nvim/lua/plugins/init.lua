@@ -18,7 +18,8 @@ local plugins = {
   -- git
   -----------------------------------------------------------
   {
-    "TimUntersberger/neogit",
+    "NeogitOrg/neogit", 
+    dependencies = "nvim-lua/plenary.nvim", 
     event = "VeryLazy",
     config = function()
       require("plugins.neogit")

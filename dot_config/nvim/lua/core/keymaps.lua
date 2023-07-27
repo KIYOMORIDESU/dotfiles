@@ -70,7 +70,7 @@ map("n", "ml", ":HopLineStart<CR>")
 -----------------------------------------------------------
 -- Lspsaga
 -----------------------------------------------------------
-map("n", "<leader>gd", ":Lspsaga lsp_finder<CR>")
+map("n", "<leader>gd", ":Lspsaga finder<CR>")
 map("n", "<leader>ca", ":Lspsaga code_action<CR>")
 map("n", "<leader>ol", ":Lspsaga outline<CR>")
 map("n", "<S-k>", ":Lspsaga hover_doc<CR>")
