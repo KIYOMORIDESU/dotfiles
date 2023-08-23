@@ -18,8 +18,8 @@ local plugins = {
   -- git
   -----------------------------------------------------------
   {
-    "NeogitOrg/neogit", 
-    dependencies = "nvim-lua/plenary.nvim", 
+    "NeogitOrg/neogit",
+    dependencies = "nvim-lua/plenary.nvim",
     event = "VeryLazy",
     config = function()
       require("plugins.neogit")
@@ -116,6 +116,23 @@ local plugins = {
   {
     "github/copilot.vim",
     event = "VeryLazy",
+  },
+
+  -----------------------------------------------------------
+  -- test runner
+  -----------------------------------------------------------
+
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-neotest/neotest-go",
+    },
+    config = function()
+      require("plugins.neotest")
+    end,
   },
 
   -----------------------------------------------------------
