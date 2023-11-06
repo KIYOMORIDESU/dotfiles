@@ -1,8 +1,4 @@
-require("ibl").setup({
-  show_current_context = true,
-  show_current_context_start = true,
-  space_char_blankline = " ",
-})
+require("ibl").setup()
 
 -- vim.cmd([[highlight IndentBlanklineSpaceCharBlankline cterm=nocombine ctermfg=12 gui=nocombine guifg=Gray]])
 -- vim.cmd([[highlight IndentBlanklineSpaceChar cterm=nocombine ctermfg=12 gui=nocombine guifg=Gray]])

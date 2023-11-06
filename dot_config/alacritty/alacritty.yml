@@ -1,9 +1,9 @@
 shell:
-  program: /bin/zsh
+  program: /usr/local/bin/zsh
   args:
-   - -l
-   - -c
-   - 'tmux a -t default || tmux new -s default\; source ~/.config/tmux/default.session.conf'
+    - -l
+    - -c
+    - "/usr/local/bin/tmux a -t 0 || /usr/local/bin/tmux -u"
 
 font:
   size: 14.0

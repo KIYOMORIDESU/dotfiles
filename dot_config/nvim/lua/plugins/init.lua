@@ -314,6 +314,13 @@ local plugins = {
   },
 
   {
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+
+  {
     "norcalli/nvim-colorizer.lua",
     event = "VeryLazy",
     config = function()
@@ -379,7 +386,7 @@ local plugins = {
 
   {
     "lukas-reineke/indent-blankline.nvim",
-    main = "ibl", 
+    main = "ibl",
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("plugins.indent-blankline")
