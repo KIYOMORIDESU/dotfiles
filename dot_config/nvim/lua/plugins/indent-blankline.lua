@@ -1,4 +1,10 @@
-require("ibl").setup()
+require("ibl").setup({
+  indent = {
+    char = "│",
+    tab_char = "│",
+  }
+})
+
 
 -- vim.cmd([[highlight IndentBlanklineSpaceCharBlankline cterm=nocombine ctermfg=12 gui=nocombine guifg=Gray]])
 -- vim.cmd([[highlight IndentBlanklineSpaceChar cterm=nocombine ctermfg=12 gui=nocombine guifg=Gray]])
