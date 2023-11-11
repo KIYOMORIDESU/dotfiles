@@ -42,6 +42,13 @@ local plugins = {
     end,
   },
 
+  {
+    "dinhhuy258/git.nvim",
+    config = function()
+      require("plugins.gitnvim")
+    end,
+  },
+
   -----------------------------------------------------------
   -- lsp & completion
   -----------------------------------------------------------
@@ -80,12 +87,17 @@ local plugins = {
           "hrsh7th/cmp-vsnip",
           "hrsh7th/vim-vsnip",
           "onsails/lspkind.nvim",
+          "zbirenbaum/copilot-cmp"
         }
       },
       {
-        "glepnir/lspsaga.nvim",
+        "nvimdev/lspsaga.nvim",
         event = "VeryLazy",
         branch = "main",
+        dependencies = {
+          "nvim-treesitter/nvim-treesitter",
+          "nvim-tree/nvim-web-devicons",
+        },
         config = function()
           require("plugins.lspsaga")
         end,
@@ -94,6 +106,12 @@ local plugins = {
         "folke/lsp-colors.nvim",
         config = function()
           require("plugins.lsp-colors")
+        end,
+      },
+      {
+        "aznhe21/actions-preview.nvim",
+        config = function()
+          require("actions-preview").setup {}
         end,
       },
     }
@@ -113,9 +131,24 @@ local plugins = {
   -- copilot
   -----------------------------------------------------------
 
+  -- {
+  --   "github/copilot.vim",
+  --   event = "VeryLazy",
+  -- },
   {
-    "github/copilot.vim",
-    event = "VeryLazy",
+    "zbirenbaum/copilot.lua",
+    config = function()
+      require("copilot").setup({})
+    end
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    dependencies = {
+      "zbirenbaum/copilot.lua",
+    },
+    config = function()
+      require("copilot_cmp").setup()
+    end
   },
 
   -----------------------------------------------------------
@@ -186,6 +219,10 @@ local plugins = {
     config = function()
       require("plugins.trouble")
     end,
+  },
+
+  {
+    "folke/zen-mode.nvim",
   },
 
   -----------------------------------------------------------
@@ -285,9 +322,9 @@ local plugins = {
   {
     "mfussenegger/nvim-dap",
     event = "VeryLazy",
-    config = function()
-      -- require("plugins.dap")
-    end,
+    -- config = function()
+    --   require("plugins.dap")
+    -- end,
   },
   {
     "rcarriga/nvim-dap-ui",
@@ -308,6 +345,16 @@ local plugins = {
   -- color scheme
   { "folke/tokyonight.nvim" },
   { "EdenEast/nightfox.nvim" },
+  { "nyoom-engineering/nyoom.nvim" },
+  { "nyoom-engineering/oxocarbon.nvim" },
+  { "bluz71/vim-nightfly-colors" },
+  { "bluz71/vim-moonfly-colors" },
+  { "savq/melange-nvim" },
+  { "AlexvZyl/nordic.nvim" },
+  {
+    "mcchrish/zenbones.nvim",
+    dependencies = { "rktjmp/lush.nvim" },
+  },
   {
     "rebelot/kanagawa.nvim",
     lazy = false,

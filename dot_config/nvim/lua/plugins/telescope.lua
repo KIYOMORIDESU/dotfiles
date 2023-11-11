@@ -9,6 +9,11 @@ ts.setup({
       },
     }
   },
+  pickers = {
+    colorscheme = {
+      enable_preview = true,
+    }
+  }
 })
 
 ts.load_extension("noice")
