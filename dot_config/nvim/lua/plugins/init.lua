@@ -396,15 +396,6 @@ local plugins = {
     end
   },
 
-  -- args color
-  {
-    "m-demare/hlargs.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("plugins.hlargs")
-    end,
-  },
-
   -- ui
   {
     "nvim-lualine/lualine.nvim",
