@@ -1,12 +1,6 @@
 local lspkind = require("lspkind")
 local cmp = require("cmp")
 
--- lspkind.init({
---   symbol_map = {
---     Copilot = "",
---   },
--- })
---
 lspkind.init({
   symbol_map = {
     Copilot = "",
@@ -34,14 +28,12 @@ cmp.setup({
     format = lspkind.cmp_format({
       with_text = true,
       mode = "symbol_text",
-      -- symbol_map = {
-      --   copilot = ""
-      -- },
     }),
   },
   mapping = cmp.mapping.preset.insert({
     ["<C-p>"] = cmp.mapping.select_prev_item(),
     ["<C-n>"] = cmp.mapping.select_next_item(),
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    ['<C-Space>'] = cmp.mapping.complete(),
   }),
 })

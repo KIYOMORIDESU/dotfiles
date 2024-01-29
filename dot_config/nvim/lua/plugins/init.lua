@@ -141,6 +141,7 @@ local plugins = {
       require("copilot").setup({})
     end
   },
+
   {
     "zbirenbaum/copilot-cmp",
     dependencies = {
@@ -422,13 +423,21 @@ local plugins = {
     end,
   },
 
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   main = "ibl",
+  --   event = { "BufReadPost", "BufNewFile" },
+  --   config = function()
+  --     require("plugins.indent-blankline")
+  --   end,
+  -- },
+
   {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    event = { "BufReadPost", "BufNewFile" },
+    "shellRaining/hlchunk.nvim",
+    event = { "UIEnter" },
     config = function()
-      require("plugins.indent-blankline")
-    end,
+      require("hlchunk").setup({})
+    end
   },
 }
 
