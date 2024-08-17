@@ -18,6 +18,7 @@ opt.swapfile = false                          -- Don't use swapfile
 opt.completeopt = "menuone,noinsert,noselect" -- Autocomplete options
 opt.list = true
 opt.listchars:append "eol:↴"
+opt.relativenumber = true
 
 -----------------------------------------------------------
 -- Neovim UI
