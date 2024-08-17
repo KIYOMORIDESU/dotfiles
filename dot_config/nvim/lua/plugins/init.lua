@@ -55,26 +55,14 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
+    config = function()
+        require("plugins.lsp-config")
+    end,
     dependencies = {
-      "mason.nvim",
       {
         "hrsh7th/cmp-nvim-lsp",
         config = function()
           require("plugins.cmp-nvim-lsp")
-        end,
-      },
-      {
-        "williamboman/mason-lspconfig.nvim",
-        dependencies = {
-          {
-            "williamboman/mason.nvim",
-            config = function()
-              require("plugins.mason")
-            end,
-          },
-        },
-        config = function()
-          require("plugins.mason-lspconfig")
         end,
       },
       {
@@ -119,7 +107,7 @@ local plugins = {
 
   -- linter & formatter
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     event = "VeryLazy",
     after = { "nvim-lspconfig" },
     config = function()
