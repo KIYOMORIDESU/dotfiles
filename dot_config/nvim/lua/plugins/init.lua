@@ -56,7 +56,7 @@ local plugins = {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
-        require("plugins.lsp-config")
+      require("plugins.lsp-config")
     end,
     dependencies = {
       {
@@ -423,9 +423,9 @@ local plugins = {
 
   {
     "shellRaining/hlchunk.nvim",
-    event = { "UIEnter" },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
-      require("hlchunk").setup({})
+      require("plugins.hlchunk")
     end
   },
 }
