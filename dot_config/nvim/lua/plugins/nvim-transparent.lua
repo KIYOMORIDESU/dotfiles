@@ -1,1 +1,1 @@
-require("transparent").setup()
+require("transparent").setup {}
