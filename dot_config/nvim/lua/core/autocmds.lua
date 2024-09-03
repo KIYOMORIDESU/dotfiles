@@ -1,4 +1,4 @@
 -----------------------------------------------------------
 -- Autocommand functions
 -----------------------------------------------------------
-vim.cmd("TransparentEnable")
+vim.cmd("TransparentDisable")

@@ -108,8 +108,8 @@ local plugins = {
   -- linter & formatter
   {
     "nvimtools/none-ls.nvim",
-    event = "VeryLazy",
-    after = { "nvim-lspconfig" },
+    -- event = "VeryLazy",
+    -- after = { "nvim-lspconfig" },
     config = function()
       require("plugins.null-ls")
     end,
@@ -412,14 +412,6 @@ local plugins = {
     end,
   },
 
-  -- {
-  --   "lukas-reineke/indent-blankline.nvim",
-  --   main = "ibl",
-  --   event = { "BufReadPost", "BufNewFile" },
-  --   config = function()
-  --     require("plugins.indent-blankline")
-  --   end,
-  -- },
 
   {
     "shellRaining/hlchunk.nvim",
@@ -428,6 +420,12 @@ local plugins = {
       require("plugins.hlchunk")
     end
   },
+
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+    config = true,
+  }
 }
 
 require("lazy").setup(plugins, {})
