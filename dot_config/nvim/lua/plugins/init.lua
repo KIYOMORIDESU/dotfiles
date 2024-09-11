@@ -289,6 +289,14 @@ local plugins = {
     end
   },
 
+  {
+    "RRethy/vim-illuminate",
+    event = "VeryLazy",
+    config = function()
+      require("plugins.vim-illuminate")
+    end,
+  },
+
   -----------------------------------------------------------
   -- code jump
   -----------------------------------------------------------
