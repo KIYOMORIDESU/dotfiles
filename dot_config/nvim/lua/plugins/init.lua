@@ -190,7 +190,7 @@ local plugins = {
   -----------------------------------------------------------
   -- ui
   -----------------------------------------------------------
-
+  -- https://github.com/folke/noice.nvim/issues/931
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -198,6 +198,7 @@ local plugins = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     },
+    version = "4.4.7",
     config = function()
       require("plugins.noice_nvim")
     end,
