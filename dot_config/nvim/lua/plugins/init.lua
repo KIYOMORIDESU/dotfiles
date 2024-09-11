@@ -49,6 +49,18 @@ local plugins = {
     end,
   },
 
+  {
+    'pwntester/octo.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+      require "octo".setup()
+    end
+  },
+
   -----------------------------------------------------------
   -- lsp & completion
   -----------------------------------------------------------
@@ -152,7 +164,7 @@ local plugins = {
       debug = true,                 -- Enable debugging
       -- See Configuration section for rest
     },
-    config = function() 
+    config = function()
       require("plugins.copilot-chat")
     end
   },
@@ -239,7 +251,6 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     event = "VeryLazy",
-    tag = "nightly",
     config = function()
       require("plugins.nvim-tree")
     end,
