@@ -2,7 +2,51 @@ local wezterm = require 'wezterm'
 local config = {}
 
 config.color_scheme = 'Kanagawa (Gogh)'
+config.window_background_gradient = {
+  colors = { 'black', "#02263d" },
+  orientation = {
+    Radial = {
+      -- Specifies the x coordinate of the center of the circle,
+      -- in the range 0.0 through 1.0.  The default is 0.5 which
+      -- is centered in the X dimension.
+      cx = 0.75,
+
+      -- Specifies the y coordinate of the center of the circle,
+      -- in the range 0.0 through 1.0.  The default is 0.5 which
+      -- is centered in the Y dimension.
+      cy = 0.75,
+
+      -- Specifies the radius of the notional circle.
+      -- The default is 0.5, which combined with the default cx
+      -- and cy values places the circle in the center of the
+      -- window, with the edges touching the window edges.
+      -- Values larger than 1 are possible.
+      radius = 1.25,
+    },
+  },
+}
 config.window_background_opacity = 0.90
+config.macos_window_background_blur = 20
+config.window_decorations = "RESIZE"
+config.show_tabs_in_tab_bar = true
+
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+  local background = "#5c6d74"
+  local foreground = "#FFFFFF"
+
+  if tab.is_active then
+    background = "#005a94"
+    foreground = "#FFFFFF"
+  end
+
+  local title = "   " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. "   "
+
+  return {
+    { Background = { Color = background } },
+    { Foreground = { Color = foreground } },
+    { Text = title },
+  }
+end)
 
 ------------------------
 -- font
