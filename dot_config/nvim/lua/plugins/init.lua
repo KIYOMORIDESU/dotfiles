@@ -378,6 +378,7 @@ local plugins = {
   { "bluz71/vim-moonfly-colors" },
   { "savq/melange-nvim" },
   { "AlexvZyl/nordic.nvim" },
+  { "savq/melange-nvim" },
   {
     "mcchrish/zenbones.nvim",
     dependencies = { "rktjmp/lush.nvim" },
@@ -400,6 +401,11 @@ local plugins = {
     config = function()
       require("plugins.colorizer")
     end
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000
   },
 
   {
