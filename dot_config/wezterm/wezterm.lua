@@ -58,8 +58,7 @@ local font = wezterm.font_with_fallback {
     harfbuzz_features = { "calt=1", "clig=1", "liga=1", 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09'
     }
   },
-  'MonaspiceNe NF',
-  'hackgen',
+  "HackGenNerd Console",
 }
 
 config.font = font
