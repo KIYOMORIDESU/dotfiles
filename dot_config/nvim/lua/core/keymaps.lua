@@ -10,9 +10,6 @@ local function map(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, options)
 end
 
--- Change leader to a space
-vim.g.mapleader = " "
-
 -----------------------------------------------------------
 -- Neovim shortcuts
 -----------------------------------------------------------
@@ -38,10 +35,10 @@ map("t", "<Esc>", "<C-\\><C-n>")                   -- exit
 map("n", "gd", vim.lsp.buf.definition)
 
 -----------------------------------------------------------
--- nvim-tree
+-- neo-tree
 -----------------------------------------------------------
 
-map("n", "<C-n>", ":NvimTreeToggle<CR>")
+-- map("n", "<C-n>", ":NvimTreeToggle<CR>")
 
 -----------------------------------------------------------
 -- Telescope
@@ -77,7 +74,7 @@ map("n", "<leader>ol", ":Lspsaga outline<CR>")
 map("n", "<S-k>", ":Lspsaga hover_doc<CR>")
 map("n", "[e", ":Lspsaga diagnostic_jump_prev<CR>")
 map("n", "]e", ":Lspsaga diagnostic_jump_next<CR>")
-map("i", "<C-k>", ":Lspsaga signature_help<CR>")
+-- map("i", "<C-k>", ":Lspsaga signature_help<CR>")
 
 -----------------------------------------------------------
 -- Buffer
@@ -89,7 +86,7 @@ map("n", "<S-Tab>", ":bprevious<CR>")
 -- Trouble
 -----------------------------------------------------------
 
-map("n", "<C-b>", ":TroubleToggle<CR>")
+-- map("n", "<leader>b", ":TroubleToggle<CR>")
 
 -----------------------------------------------------------
 -- action preview
