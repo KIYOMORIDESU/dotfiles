@@ -2,13 +2,10 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   config = function()
+    -- lsp server configurations
     require("plugins.lsp.servers.gopls").setup()
     require("plugins.lsp.servers.lua_ls").setup()
-    local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
-    for type, icon in pairs(signs) do
-      local hl = "LspDiagnosticsSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-    end
+
   end,
   dependencies = {
     { "hrsh7th/cmp-nvim-lsp" },

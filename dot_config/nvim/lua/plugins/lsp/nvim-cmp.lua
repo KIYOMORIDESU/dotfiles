@@ -12,6 +12,9 @@ return {
     })
 
     cmp.setup({
+      completion = {
+        autocomplete = true,
+      },
       snippet = {
         expand = function(args)
           vim.fn["vsnip#anonymous"](args.body)

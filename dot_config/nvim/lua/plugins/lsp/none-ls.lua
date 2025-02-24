@@ -1,6 +1,9 @@
 return {
   "nvimtools/none-ls.nvim",
-  -- event = "VeryLazy",
+  event = "VeryLazy",
+  dependencies = {
+    "nvimtools/none-ls-extras.nvim",
+  },
   -- after = { "nvim-lspconfig" },
   config = function()
     local null_ls = require("null-ls")
@@ -25,11 +28,12 @@ return {
     ------------------------------------------------------------
     -- Json
     ------------------------------------------------------------
-    -- TODO:
+    local jq = require("none-ls.formatting.jq")
 
     local sources = {
       goimports,
-      yamlfmt
+      yamlfmt,
+      jq,
     }
     null_ls.setup({
       sources = sources,

@@ -11,7 +11,6 @@ return {
           winbar = 1000,
         }
       },
-
       sections = {
         lualine_y = {
           require("lsp-progress").progress

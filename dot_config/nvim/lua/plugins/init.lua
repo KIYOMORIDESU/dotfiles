@@ -18,7 +18,6 @@ local plugins = {
   -- git
   -----------------------------------------------------------
   { import = "plugins.util.git" },
-
   -----------------------------------------------------------
   -- lsp & completion
   -----------------------------------------------------------
@@ -29,65 +28,22 @@ local plugins = {
   -- AI
   -----------------------------------------------------------
   { import = "plugins.ai" },
-
   -----------------------------------------------------------
   -- ui
   -----------------------------------------------------------
   { import = "plugins.ui" },
-
-  {
-    "nvim-telescope/telescope.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "folke/noice.nvim"
-    },
-    config = function()
-      require("plugins.telescope")
-    end,
-  },
-
-
-  {
-    's1n7ax/nvim-window-picker',
-    config = function()
-      require('plugins.nvim-window-picker')
-    end
-
-  },
-
   -----------------------------------------------------------
   -- treesitter
   -----------------------------------------------------------
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPost", "BufNewFile" },
-    run = ":TSUpdate",
-    config = function()
-      require("plugins.treesitter")
-    end,
-  },
-
+  { import = "plugins.treesitter" },
   -----------------------------------------------------------
   -- util tool
   -----------------------------------------------------------
-
   { import = "plugins.util" },
-
   -----------------------------------------------------------
   -- debugger & dap
   -----------------------------------------------------------
-
   { import = "plugins.dap" },
-
-  -----------------------------------------------------------
-  -- ui
-  -----------------------------------------------------------
-  {
-    "p00f/nvim-ts-rainbow",
-    event = "VeryLazy",
-  },
 }
 
 require("lazy").setup(plugins, {})

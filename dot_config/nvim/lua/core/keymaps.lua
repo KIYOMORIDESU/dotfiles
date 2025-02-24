@@ -38,7 +38,7 @@ map("n", "gd", vim.lsp.buf.definition)
 -- neo-tree
 -----------------------------------------------------------
 
-map("n", "<C-n>", ":NvimTreeToggle<CR>")
+-- map("n", "<C-n>", ":NvimTreeToggle<CR>")
 
 -----------------------------------------------------------
 -- Telescope
@@ -86,7 +86,7 @@ map("n", "<S-Tab>", ":bprevious<CR>")
 -- Trouble
 -----------------------------------------------------------
 
-map("n", "<C-b>", ":TroubleToggle<CR>")
+-- map("n", "<leader>b", ":TroubleToggle<CR>")
 
 -----------------------------------------------------------
 -- action preview
